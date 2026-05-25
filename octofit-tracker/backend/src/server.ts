@@ -1,23 +1,9 @@
-import cors from 'cors';
 import dotenv from 'dotenv';
-import express from 'express';
+import app from './app.js';
 import { config } from './config.js';
-import { connectToDatabase } from './db.js';
+import { connectToDatabase } from './config/database.js';
 
 dotenv.config();
-
-const app = express();
-
-app.use(cors({ origin: 'http://localhost:5173' }));
-app.use(express.json());
-
-app.get('/api/health', (_req, res) => {
-  res.json({
-    status: 'ok',
-    service: 'octofit-tracker-api',
-    mongoPort: 27017,
-  });
-});
 
 async function start() {
   try {
