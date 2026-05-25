@@ -1,6 +1,7 @@
 {
   "name": "octofit-tracker-frontend",
   "version": "0.1.0",
+  "description": "OctoFit Tracker React frontend",
   "private": true,
   "type": "module",
   "scripts": {
