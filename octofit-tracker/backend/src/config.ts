@@ -1,13 +1,13 @@
+import 'dotenv/config';
+
 const codespaceName = process.env.CODESPACE_NAME;
-const codespacesDomain = process.env.GITHUB_CODESPACES_PORT_FORWARDING_DOMAIN;
 
 function buildCodespacesUrl(port: number) {
   if (!codespaceName) {
     return undefined;
   }
 
-  const domain = codespacesDomain ?? 'app.github.dev';
-  return `https://${codespaceName}-${port}.${domain}`;
+  return `https://${codespaceName}-${port}.app.github.dev`;
 }
 
 export const config = {
